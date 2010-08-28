@@ -1,0 +1,14 @@
+/* Imports*/
+@import url("./yui-reset-3.1.1-min.css");
+@import url("./generic.css");
+
+#scrollto-demo a {
+	cursor:pointer;
+	color:blue;
+	display:block;
+	margin-bottom:5px;
+}
+
+#scrollto-demo a:hover {
+	text-decoration:underline;
+}
