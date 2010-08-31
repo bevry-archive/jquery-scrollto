@@ -11,8 +11,8 @@
 	
 	/**
 	 * jQuery ScrollTo (balupton edition)
-	 * @version 1.0.0
-	 * @date August 28, 2010
+	 * @version 1.0.1
+	 * @date August 31, 2010
 	 * @since 0.1.0, August 27, 2010
      * @package jquery-scrollto {@link http://www.balupton/projects/jquery-scrollto}
 	 * @author Benjamin "balupton" Lupton {@link http://www.balupton.com}
@@ -143,7 +143,7 @@
 			
 				// Add the final collection
 				collections.push({
-					'$container': $('body'),
+					'$container': $($.browser.msie ? 'html' : 'body'),
 					'$target': $target
 				});
 	

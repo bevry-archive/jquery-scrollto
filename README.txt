@@ -19,8 +19,8 @@
  * - A copy of our interpretation of the license used.
  *   If not, see <http://github.com/balupton/jquery-scrollto/blob/master/COPYING.txt>.
  * 
- * @version 1.0.0-beta
- * @date August 28, 2010
+ * @version 1.0.1-beta
+ * @date August 31, 2010
  * @since v0.1.0-dev, August 27, 2010
  * @category jquery-plugin
  * @package jquery-scrollto {@link http://www.balupton/projects/jquery-scrollto}
@@ -40,6 +40,9 @@ Todo:
 ----
 
 Changelog:
+
+v1.0.1-beta, August 31, 2010
+- Fixed body scrolling in IE
 
 v1.0.0-beta, August 28, 2010
 - Initial Released Version
