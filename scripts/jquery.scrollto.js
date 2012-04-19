@@ -14,7 +14,7 @@
 	 * @version 1.0.1
 	 * @date August 31, 2010
 	 * @since 0.1.0, August 27, 2010
-     * @package jquery-scrollto {@link http://www.balupton/projects/jquery-scrollto}
+	 * @package jquery-scrollto {@link http://www.balupton/projects/jquery-scrollto}
 	 * @author Benjamin "balupton" Lupton {@link http://www.balupton.com}
 	 * @copyright (c) 2010 Benjamin Arthur Lupton {@link http://www.balupton.com}
 	 * @license GNU Affero General Public License version 3 {@link http://www.gnu.org/licenses/agpl-3.0.html}
@@ -28,7 +28,8 @@
 				duration: 400,
 				easing: 'swing',
 				callback: undefined,
-				durationMode: 'each'
+				durationMode: 'each',
+				offset: 0
 			},
 
 			/**
@@ -53,7 +54,7 @@
 				var ScrollTo = $.ScrollTo;
 
 				// Determine the Scroll
-	    		var	collection = collections.pop(),
+				var	collection = collections.pop(),
 					$container = collection.$container,
 					$target = collection.$target;
 
@@ -72,7 +73,7 @@
 				// Determine the Offsets
 				var	startOffset = $inline.offset().top,
 					targetOffset = $target.offset().top,
-					offsetDifference = targetOffset - startOffset;
+					offsetDifference = targetOffset - startOffset - parseInt(config.offset);
 
 				// Reset the Inline Element of the Container
 				$inline.remove();
