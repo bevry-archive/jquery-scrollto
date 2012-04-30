@@ -1,7 +1,7 @@
 /**
  * @depends jquery
  * @name jquery.scrollto
- * @package jquery-scrollto {@link http://www.balupton/projects/jquery-scrollto}
+ * @package jquery-scrollto {@link http://balupton.com/projects/jquery-scrollto}
  */
 
 /**
@@ -14,10 +14,10 @@
 	 * @version 1.0.1
 	 * @date August 31, 2010
 	 * @since 0.1.0, August 27, 2010
-     * @package jquery-scrollto {@link http://www.balupton/projects/jquery-scrollto}
-	 * @author Benjamin "balupton" Lupton {@link http://www.balupton.com}
-	 * @copyright (c) 2010 Benjamin Arthur Lupton {@link http://www.balupton.com}
-	 * @license GNU Affero General Public License version 3 {@link http://www.gnu.org/licenses/agpl-3.0.html}
+     * @package jquery-scrollto {@link http://balupton.com/projects/jquery-scrollto}
+	 * @author Benjamin "balupton" Lupton {@link http://balupton.com}
+	 * @copyright (c) 2010 Benjamin Arthur Lupton {@link http://balupton.com}
+	 * @license MIT License {@link http://creativecommons.org/licenses/MIT/}
 	 */
 	if ( !($.ScrollTo||false) ) {
 		$.ScrollTo = {
