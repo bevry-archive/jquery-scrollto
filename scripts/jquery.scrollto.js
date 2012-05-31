@@ -70,9 +70,12 @@
 				$inline.appendTo($container);
 
 				// Determine the Offsets
-				var	startOffset = $inline.offset().top,
-					targetOffset = $target.offset().top,
-					offsetDifference = targetOffset - startOffset;
+				var	vertStartOffset = $inline.offset().left,
+					vertTargetOffset = $target.offset().left,
+					vertOffsetDifference = vertTargetOffset - vertStartOffset,
+	                                horizStartOffset = $inline.offset().top,
+	                                horizTargetOffset = $inline.offset().top,
+	                                horizOffsetDifference = horizTargetOffset - horizStartOffset;
 
 				// Reset the Inline Element of the Container
 				$inline.remove();
@@ -97,7 +100,8 @@
 
 				// Perform the Scroll
 				$container.animate({
-					'scrollTop': offsetDifference+'px'
+					'scrollLeft': vertOffsetDifference+'px',
+					'scrollTop': horizOffsetDifference+'px'
 				}, config.duration, config.easing, callback);
 
 				// Return true
@@ -128,7 +132,9 @@
 				while ( $container.length === 1 && !$container.is('body') && !($container.get(0) === document) ) {
 					// Check Container
 					var container = $container.get(0);
-					if ( $container.css('overflow-y') !== 'visible' && container.scrollHeight !== container.clientHeight ) {
+					if ( ( $container.css('overflow-x') !== 'visible' && container.scrollWidth !== container.clientWidth ) ||
+                                             ( $container.css('overflow-y') !== 'visible' && container.scrollHeight !== container.clientHeight )
+                                           ) {
 						// Push the Collection
 						collections.push({
 							'$container': $container,
