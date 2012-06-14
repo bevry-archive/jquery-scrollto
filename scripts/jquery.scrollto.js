@@ -28,7 +28,8 @@
 				duration: 400,
 				easing: 'swing',
 				callback: undefined,
-				durationMode: 'each'
+				durationMode: 'each',
+        customOffset: 0
 			},
 
 			/**
@@ -95,9 +96,14 @@
 					return true;
 				};
 
+        // Firefox stores the overflow at the html level, unless specifically styled to behave differently.
+        if($container[0].tagName === "BODY" && $.browser.mozilla){
+          $container = $('html');
+        }
+
 				// Perform the Scroll
 				$container.animate({
-					'scrollTop': offsetDifference+'px'
+					'scrollTop': offsetDifference - config.customOffset + 'px'
 				}, config.duration, config.easing, callback);
 
 				// Return true
