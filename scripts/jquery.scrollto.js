@@ -95,6 +95,11 @@
 					return true;
 				};
 
+        // Firefox stores the overflow at the html level, unless specifically styled to behave differently.
+        if($container[0].tagName === "BODY" && $.browser.mozilla){
+          $container = $('html');
+        }
+
 				// Perform the Scroll
 				$container.animate({
 					'scrollTop': offsetDifference+'px'
