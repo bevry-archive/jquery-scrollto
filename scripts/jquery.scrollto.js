@@ -14,7 +14,7 @@
 
 	/**
 	 * jQuery ScrollTo (balupton edition)
-	 * @version 1.0.2
+	 * @version 1.1.0
 	 * @date July 2, 2012
 	 * @since 0.1.0, August 27, 2010
 	 * @package jquery-scrollto {@link http://balupton.com/projects/jquery-scrollto}
@@ -30,7 +30,9 @@
 			duration: 400,
 			easing: 'swing',
 			callback: undefined,
-			durationMode: 'each'
+			durationMode: 'each',
+			offsetTop: 0,
+			offsetLeft: 0
 		},
 
 		/**
@@ -51,8 +53,9 @@
 		 */
 		scroll: function(collections, config){
 			// Prepare
-			var collection, $container, $target, $inline,
-				position, startOffset, targetOffset, offsetDifference,
+			var collection, $container, $target, $inline, position,
+				startOffsetTop, targetOffsetTop, offsetDifferenceTop,
+				startOffsetLeft, targetOffsetLeft, offsetDifferenceLeft,
 				callback;
 
 			// Determine the Scroll
@@ -72,10 +75,15 @@
 			$container.css('position','relative');
 			$inline.appendTo($container);
 
-			// Determine the Offsets
-			startOffset = $inline.offset().top;
-			targetOffset = $target.offset().top;
-			offsetDifference = targetOffset - startOffset;
+			// Determine the top offset
+			startOffsetTop = $inline.offset().top;
+			targetOffsetTop = $target.offset().top;
+			offsetDifferenceTop = targetOffsetTop - startOffsetTop - parseInt(config.offsetTop,10);
+
+			// Determine the left offset
+			startOffsetLeft = $inline.offset().left;
+			targetOffsetLeft = $target.offset().left;
+			offsetDifferenceLeft = targetOffsetLeft - startOffsetLeft - parseInt(config.offsetLeft,10);
 
 			// Reset the Inline Element of the Container
 			$inline.remove();
@@ -100,7 +108,8 @@
 
 			// Perform the Scroll
 			$container.animate({
-				'scrollTop': offsetDifference+'px'
+				'scrollTop': offsetDifferenceTop+'px',
+				'scrollLeft': offsetDifferenceLeft+'px'
 			}, config.duration, config.easing, callback);
 
 			// Return true
@@ -112,7 +121,7 @@
 		 */
 		fn: function(options){
 			// Prepare
-			var collections, config, $container;
+			var collections, config, $container, container;
 			collections = [];
 
 			// Prepare
@@ -127,13 +136,15 @@
 
 			// Fetch
 			$container = $target.parent();
+			container = $container.get(0);
 
 			// Cycle through the containers
-			while ( $container.length === 1 && $container.is('body') === false && ($container.get(0) === document) === false ) {
-				// Check Container
-				var container;
-				container = $container.get(0);
-				if ( $container.css('overflow-y') !== 'visible' && container.scrollHeight !== container.clientHeight ) {
+			while ( ($container.length === 1) && (container !== document.body) && (container !== document) ) {
+				// Check Container for scroll differences
+				var scrollTop, scrollLeft;
+				scrollTop = $container.css('overflow-y') !== 'visible' && container.scrollHeight !== container.clientHeight;
+				scrollLeft =  $container.css('overflow-x') !== 'visible' && container.scrollWidth !== container.clientWidth;
+				if ( scrollTop || scrollLeft ) {
 					// Push the Collection
 					collections.push({
 						'$container': $container,
@@ -144,11 +155,14 @@
 				}
 				// Update the Container
 				$container = $container.parent();
+				container = $container.get(0);
 			}
 
 			// Add the final collection
 			collections.push({
-				'$container': $($.browser.msie ? 'html' : 'body'),
+				'$container': $(
+					($.browser.msie || $.browser.mozilla) ? 'html' : 'body'
+				),
 				'$target': $target
 			});
 

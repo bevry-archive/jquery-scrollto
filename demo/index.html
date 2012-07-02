@@ -10,7 +10,7 @@
 	<!-- Include jQuery (ScrollTo Requirement) -->
 	<script type="text/javascript" src="../scripts/jquery-1.4.2.min.js"></script>
 	<!-- Include jQuery ScrollTo -->
-	<script type="text/javascript" src="../scripts/jquery.scrollto.min.js"></script>
+	<script type="text/javascript" src="../scripts/jquery.scrollto.js"></script>
 
 	<!-- Include The Demo's Requirements -->
 	<link type="text/css" rel="stylesheet" media="screen" href="./styles/style.css" />
@@ -32,7 +32,7 @@
 	<div class="section links" id="links">
 		<h1>jQuery ScrollTo - Smooth Scrolling to any jQuery/DOM Element</h1>
 		<h2><a href="http://github.com/balupton/jquery-scrollto/zipball/master" title="Download" id="download">Download</a></h2>
-		<h2><a href="http://www.balupton.com/projects/jquery-scrollto" title="Home Page">Home Page</a></h2>
+		<h2><a href="http://balupton.com/projects/jquery-scrollto" title="Home Page">Home Page</a></h2>
 		<h2><a href="http://github.com/balupton/jquery-scrollto" title="Project Page">Project Page</a></h2>
 		<h2><a href="http://getsatisfaction.com/balupton/products/balupton_jquery_scrollto" title="Support Page" class="gsfnwidget">Get Support</a></h2>
 		<h2><a href="http://github.com/balupton/jquery-scrollto/tree/master" title="Source Code">Source Code</a></h2>
@@ -60,14 +60,14 @@
 
 		<div id="scrollto-demo">
 			<div id="scrollto-links"></div>
-			<div id="scrollto-group" style="overflow-y:scroll;height:200px;border:5px ridge white;padding:15px">
-				<div id="scrollto1" style="height:300px">
+			<div id="scrollto-group">
+				<div id="scrollto1">
 					#scrollto1:
 					<pre class="code language-javascript">
 						$('#scrollto1').ScrollTo();
 					</pre>
 				</div>
-				<div id="scrollto2" style="height:300px">
+				<div id="scrollto2">
 					#scrollto2
 					<pre class="code language-javascript">
 						$('#scrollto2').ScrollTo({
@@ -76,7 +76,7 @@
 						});
 					</pre>
 				</div>
-				<div id="scrollto3" style="height:300px">
+				<div id="scrollto3">
 					#scrollto3
 					<pre class="code language-javascript">
 						$('#scrollto3').ScrollTo({
@@ -85,13 +85,19 @@
 						});
 					</pre>
 				</div>
-				<div id="scrollto4" style="height:300px">
+				<div id="scrollto4">
 					#scrollto4
 					<pre class="code language-javascript">
 						$('#scrollto4').ScrollTo({
 							duration: 2000,
 							alert('Scrolling has now completed.');
 						});
+					</pre>
+				</div>
+				<div id="scrollto5" style="margin-left:600px;">
+					#scrollto5
+					<pre class="code language-javascript">
+						$('#scrollto5').ScrollTo();
 					</pre>
 				</div>
 			</div>
@@ -101,8 +107,7 @@
 					var links = [
 						{
 							id: 'scrollto1',
-							text: 'Scroll to #scrollto1',
-							options: undefined
+							text: 'Scroll to #scrollto1'
 						},
 						{
 							id: 'scrollto2',
@@ -129,6 +134,10 @@
 									alert('Scrolling has now completed.');
 								}
 							}
+						},
+						{
+							id: 'scrollto5',
+							text: 'Scroll to #scrollto5 with a horizontal scroll'
 						}
 					];
 
