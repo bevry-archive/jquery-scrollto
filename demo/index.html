@@ -6,12 +6,12 @@
     <title>
     	jQuery ScrollTo - Smooth Scrolling to any jQuery/DOM Element
     </title>
-	
+
 	<!-- Include jQuery (ScrollTo Requirement) -->
 	<script type="text/javascript" src="../scripts/jquery-1.4.2.min.js"></script>
 	<!-- Include jQuery ScrollTo -->
 	<script type="text/javascript" src="../scripts/jquery.scrollto.min.js"></script>
-	
+
 	<!-- Include The Demo's Requirements -->
 	<link type="text/css" rel="stylesheet" media="screen" href="./styles/style.css" />
 </head>
@@ -22,13 +22,13 @@
 	<script type="text/javascript">/*<![CDATA[*/
 		$.SyntaxHighlighter.init();
 	/*]]>*/</script>
-	
+
 	<!-- GetSatisfaction -->
-	<script type="text/javascript" src="http://s3.amazonaws.com/getsatisfaction.com/javascripts/feedback-v2.js"></script> 
+	<script type="text/javascript" src="http://s3.amazonaws.com/getsatisfaction.com/javascripts/feedback-v2.js"></script>
 	<script type="text/javascript">/*<![CDATA[*/
 	var GSFN_feedback_widget = new GSFN.feedback_widget({ display: 'overlay', company: 'balupton', placement: 'right', color: '#222', style: 'question' });
-	/*]]>*/</script> 
-	
+	/*]]>*/</script>
+
 	<div class="section links" id="links">
 		<h1>jQuery ScrollTo - Smooth Scrolling to any jQuery/DOM Element</h1>
 		<h2><a href="http://github.com/balupton/jquery-scrollto/zipball/master" title="Download" id="download">Download</a></h2>
@@ -37,27 +37,27 @@
 		<h2><a href="http://getsatisfaction.com/balupton/products/balupton_jquery_scrollto" title="Support Page" class="gsfnwidget">Get Support</a></h2>
 		<h2><a href="http://github.com/balupton/jquery-scrollto/tree/master" title="Source Code">Source Code</a></h2>
 	</div>
-	
+
 	<div class="section about" id="about">
 		<h2>About</h2>
-		
+
 		<p>
 			<strong>jQuery ScrollTo</strong> is a great and reliable way to scroll to any element on your page. It brings such features as:
 		</p>
-		
+
 		<ul class="features">
 			<li><strong>Extremely simple to use:</strong> just call <code>$('#element).ScrollTo()</code> and your user will be smoothly scrolled to that element!</li>
 			<li><strong>Only 1KB in size!</strong> Making it the smallest ScrollTo plugin and won't slow you down.</li>
 			<li><strong>Supports all the elements you can throw at it!</strong> Even those ones in modals and scrollable areas! So you can now feel at ease knowing your user will always be scrolled to that correct place which you intended.</li>
 			<li><strong>It's even easy customise and work with!</strong> You can specify such options as <code>duration</code>, <code>easing</code>, and <code>callback</code> on your ScrollTo call.</li>
 		</ul>
-		
+
 		<p>Enough talk, let's see it in action!</p>
 	</div>
-	
+
 	<div class="section using" id="using">
 		<h2>Using jQuery ScrollTo</h2>
-		
+
 		<div id="scrollto-demo">
 			<div id="scrollto-links"></div>
 			<div id="scrollto-group" style="overflow-y:scroll;height:200px;border:5px ridge white;padding:15px">
@@ -131,10 +131,10 @@
 							}
 						}
 					];
-				
+
 					// Fetch
 					var $links = $('#scrollto-links');
-				
+
 					// Append Links
 					$.each(links,function(i,link){
 						$('<a>'+link.text+'</a>').click(function(){
@@ -145,10 +145,10 @@
 			</script>
 		</div>
 	</div>
-	
+
 	<div class="section install" id="install">
 		<h2>Installation</h2>
-		
+
 		<h3>Step 1. <a href="http://github.com/balupton/jquery-ajaxy/zipball/master" title="Download">Download</a> jQuery ScrollTo, and extract it to your hard drive</h3>
 		<div>
 			As everyones extraction process is a little bit different be sure of the following:
@@ -158,24 +158,24 @@
 				<li>If the archive was extracted and you have only one directory and it is not called <code>jquery-scrollto</code> then you must rename it to <code>jquery-scrollto</code> to continue.</li>
 			</ul>
 		</div>
-		
+
 		<h3>Step 2. Move the <code>jquery-scrollto</code> directory to somewhere on your webserver</h3>
 		<p>Be sure to always keep the entire <code>jquery-scrollto</code> directory intact; this means if you were to only move some of the files instead of moving the entire directory, then you would run into problems due to the cross directory references would no longer be working.</p>
-		
+
 		<h3>Step 3. Include jQuery (insert into your page's head tag)</h3>
 		<p>If your page already has jQuery included then you can skip this step.</p>
 		<pre class="code language-html">
 			&lt;!-- Include jQuery (ScrollTo Requirement) --&gt;
 			&lt;script type="text/javascript" src="http://www.yoursite.com/somewhere/on/your/webserver/jquery-scrollto/scripts/jquery-1.4.2.min.js"&gt;&lt;/script&gt;
 		</pre>
-		
+
 		<h3>Step 4. Include jQuery ScrollTo (insert into your page's head tag)</h3>
 		<pre class="code language-html">
 			&lt;!-- Include ScrollTo (Production) --&gt;
 			&lt;script type="text/javascript" src="http://www.yoursite.com/somewhere/on/your/webserver/jquery-scrollto/scripts/jquery.scrollto.min.js"&gt;&lt;/script&gt;
 		</pre>
 	</div>
-	
+
 	<div class="section">
 		<h2>Enjoy!!!</h2>
 		<p>
@@ -196,21 +196,21 @@
 				<input id="paypal-submit" type="image" src="https://www.paypal.com/en_AU/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online.">
 			</p>
 		</form>
-		<p> 
-			This work is licensed under a <a rel="license" href="http://www.gnu.org/licenses/agpl.html">GNU Affero General Public License</a>.
+		<p>
+			Licensed under the <a rel="license" href="http://creativecommons.org/licenses/MIT/">MIT License</a>.
 		</p>
 		<br />
 	</div>
-	
-	<!-- Google Analytics --> 
-	<script type="text/javascript"> 
+
+	<!-- Google Analytics -->
+	<script type="text/javascript">
 		//<![CDATA[
 		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
 		//]]>
-	</script> 
-	<script type="text/javascript" src="./scripts/modernizr-1.5.min.js"></script> 
-	<script type="text/javascript"> 
+	</script>
+	<script type="text/javascript" src="./scripts/modernizr-1.5.min.js"></script>
+	<script type="text/javascript">
 		//<![CDATA[
 		try {
 			var pageTracker = _gat._getTracker("UA-4446117-1");
@@ -224,6 +224,6 @@
 		} catch(err) {}
 		//]]>
 	</script>
-	
+
 </body>
 </html>

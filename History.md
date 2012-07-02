@@ -1,5 +1,9 @@
 ## History
 
+v1.0.2, July 2, 2012
+- Coding standards update
+- Fixed global leak
+
 v1.0.1-beta, August 31, 2010
 - Fixed body scrolling in IE
 
