@@ -100,6 +100,14 @@
 						$('#scrollto5').ScrollTo();
 					</pre>
 				</div>
+				<div id="scrollto6" style="margin-left:600px;">
+					#scrollto6
+					<pre class="code language-javascript">
+						$('#scrollto6').ScrollTo({
+							onlyIfOutside: true
+						});
+					</pre>
+				</div>
 			</div>
 			<script type="text/javascript">
 				$(function(){
@@ -138,6 +146,13 @@
 						{
 							id: 'scrollto5',
 							text: 'Scroll to #scrollto5 with a horizontal scroll'
+						},
+						{
+							id: 'scrollto6',
+							text: 'Scroll to #scrollto6 only if it is outside the visible area',
+							options: {
+								onlyIfOutside: true
+							}
 						}
 					];
 

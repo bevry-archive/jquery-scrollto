@@ -14,8 +14,8 @@
 
 	/**
 	 * jQuery ScrollTo (balupton edition)
-	 * @version 1.1.0
-	 * @date July 2, 2012
+	 * @version 1.2.0
+	 * @date July 9, 2012
 	 * @since 0.1.0, August 27, 2010
 	 * @package jquery-scrollto {@link http://balupton.com/projects/jquery-scrollto}
 	 * @author Benjamin "balupton" Lupton {@link http://balupton.com}
@@ -53,14 +53,18 @@
 		 */
 		scroll: function(collections, config){
 			// Prepare
-			var collection, $container, $target, $inline, position,
-				startOffsetTop, targetOffsetTop, offsetDifferenceTop,
-				startOffsetLeft, targetOffsetLeft, offsetDifferenceLeft,
+			var collection, $container, container, $target, $inline, position,
+				containerScrollTop, containerScrollLeft,
+				containerScrollTopEnd, containerScrollLeftEnd,
+				startOffsetTop, targetOffsetTop, targetOffsetTopAdjusted,
+				startOffsetLeft, targetOffsetLeft, targetOffsetLeftAdjusted,
+				scrollOptions,
 				callback;
 
 			// Determine the Scroll
 			collection = collections.pop();
 			$container = collection.$container;
+			container = $container.get(0);
 			$target = collection.$target;
 
 			// Prepare the Inline Element of the Container
@@ -78,12 +82,16 @@
 			// Determine the top offset
 			startOffsetTop = $inline.offset().top;
 			targetOffsetTop = $target.offset().top;
-			offsetDifferenceTop = targetOffsetTop - startOffsetTop - parseInt(config.offsetTop,10);
+			targetOffsetTopAdjusted = targetOffsetTop - startOffsetTop - parseInt(config.offsetTop,10);
 
 			// Determine the left offset
 			startOffsetLeft = $inline.offset().left;
 			targetOffsetLeft = $target.offset().left;
-			offsetDifferenceLeft = targetOffsetLeft - startOffsetLeft - parseInt(config.offsetLeft,10);
+			targetOffsetLeftAdjusted = targetOffsetLeft - startOffsetLeft - parseInt(config.offsetLeft,10);
+
+			// Determine current scroll positions
+			containerScrollTop = container.scrollTop;
+			containerScrollLeft = container.scrollLeft;
 
 			// Reset the Inline Element of the Container
 			$inline.remove();
@@ -106,11 +114,37 @@
 				return true;
 			};
 
-			// Perform the Scroll
-			$container.animate({
-				'scrollTop': offsetDifferenceTop+'px',
-				'scrollLeft': offsetDifferenceLeft+'px'
-			}, config.duration, config.easing, callback);
+			// Handle if we only want to scroll if we are outside the viewport
+			if ( config.onlyIfOutside ) {
+				// Determine current scroll positions
+				containerScrollTopEnd = containerScrollTop + $container.height();
+				containerScrollLeftEnd = containerScrollLeft + $container.width();
+
+				// Check if we are in the range of the visible area of the container
+				if ( containerScrollTop < targetOffsetTopAdjusted && targetOffsetTopAdjusted < containerScrollTopEnd ) {
+					targetOffsetTopAdjusted = containerScrollTop;
+				}
+				if ( containerScrollLeft < targetOffsetLeftAdjusted && targetOffsetLeftAdjusted < containerScrollLeftEnd ) {
+					targetOffsetLeftAdjusted = containerScrollLeft;
+				}
+			}
+
+			// Determine the scroll options
+			scrollOptions = {};
+			if ( targetOffsetTopAdjusted !== containerScrollTop ) {
+				scrollOptions.scrollTop = targetOffsetTopAdjusted+'px';
+			}
+			if ( targetOffsetLeftAdjusted !== containerScrollLeft ) {
+				scrollOptions.scrollLeft = targetOffsetLeftAdjusted+'px';
+			}
+
+			// Perform the scroll
+			if ( scrollOptions.scrollTop || scrollOptions.scrollLeft ) {
+				$container.animate(scrollOptions, config.duration, config.easing, callback);
+			}
+			else {
+				callback();
+			}
 
 			// Return true
 			return true;

@@ -1,7 +1,10 @@
 ## History
 
+- v1.2.0, July 2, 2012
+	- Added `onlyIfOutside` option
+
 - v1.1.0, July 2, 2012
-	- Added custom offset option
+	- Added `offsetTop` and `offsetLeft` options
 	- Fixed firefox body scroll issue
 	- Added horizontal scrolling
 	- Closes 2, 3, 5, 6, 7
