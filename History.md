@@ -2,7 +2,7 @@
 
 - v1.2.1 October 21, 2012
 	- Workaround for Safari 6
-		- Closes [#8](https://github.com/balupton/jquery-scrollto/issues/8) thanks to [Fabricio Quagliariello](https://github.com/fmquaglia) for reporting
+		- Closes [#8](https://github.com/balupton/jquery-scrollto/issues/8) thanks to [Cameron Spear](https://github.com/CWSpear), [Dhruv Bhatia](https://github.com/dhruv-bhatia), [Fabricio Quagliariello](https://github.com/fmquaglia) for their help
 
 - v1.2.0 July 2, 2012
 	- Added `onlyIfOutside` option
