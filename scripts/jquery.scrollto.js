@@ -97,6 +97,9 @@
 			$inline.remove();
 			$container.css('position',position);
 
+			// Prepare the scroll options
+			scrollOptions = {};
+
 			// Prepare the callback
 			callback = function(event){
 				// Check
@@ -130,16 +133,19 @@
 			}
 
 			// Determine the scroll options
-			scrollOptions = {};
 			if ( targetOffsetTopAdjusted !== containerScrollTop ) {
-				scrollOptions.scrollTop = targetOffsetTopAdjusted+'px';
+				scrollOptions.scrollTop = targetOffsetTopAdjusted;
 			}
 			if ( targetOffsetLeftAdjusted !== containerScrollLeft ) {
-				scrollOptions.scrollLeft = targetOffsetLeftAdjusted+'px';
+				scrollOptions.scrollLeft = targetOffsetLeftAdjusted;
 			}
 
 			// Perform the scroll
-			if ( scrollOptions.scrollTop || scrollOptions.scrollLeft ) {
+			if ( $.browser.safari && container === document.body ) {
+				window.scrollTo(scrollOptions.scrollLeft, scrollOptions.scrollTop);
+				callback();
+			}
+			else if ( scrollOptions.scrollTop || scrollOptions.scrollLeft ) {
 				$container.animate(scrollOptions, config.duration, config.easing, callback);
 			}
 			else {
