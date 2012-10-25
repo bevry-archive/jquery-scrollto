@@ -141,7 +141,8 @@
 			}
 
 			// Perform the scroll
-			if ( $.browser.safari && container === document.body ) {
+			if ( $.browser.mozilla && container === document.body.parentElement ||
+					 $.browser.safari && container === document.body ) {
 				window.scrollTo(scrollOptions.scrollLeft, scrollOptions.scrollTop);
 				callback();
 			}
