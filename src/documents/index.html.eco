@@ -217,7 +217,7 @@ urls: ['/demo/']
 		<h3>Step 5. Include jQuery ScrollTo (insert into your page's head tag)</h3>
 		<pre><code class="language-html">
 			&lt;!-- Include ScrollTo (Production) --&gt;
-			&lt;script src="http://www.yoursite.com/somewhere/on/your/webserver/jquery-scrollto/lib/jquery-scrollto.min.js"&gt;&lt;/script&gt;
+			&lt;script src="http://www.yoursite.com/somewhere/on/your/webserver/jquery-scrollto/lib/jquery-scrollto.js"&gt;&lt;/script&gt;
 		</code></pre>
 	</div>
 
