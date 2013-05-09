@@ -187,7 +187,7 @@ urls: ['/demo/']
 	<div class="section install" id="install">
 		<h2>Installation</h2>
 
-		<h3>Step 1. <a href="http://github.com/balupton/jquery-ajaxy/zipball/gh-pages" title="Download">Download</a> jQuery ScrollTo, and extract it to your hard drive</h3>
+		<h3>Step 1. <a href="http://github.com/balupton/jquery-scrollto/zipball/gh-pages" title="Download">Download</a> jQuery ScrollTo, and extract it to your hard drive</h3>
 		<div>
 			As everyones extraction process is a little bit different be sure of the following:
 			<ul class="install">
