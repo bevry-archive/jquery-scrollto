@@ -46,10 +46,9 @@ urls: ['/demo/']
 	<div class="section links" id="links">
 		<h1>jQuery ScrollTo - Smooth Scrolling to any jQuery/DOM Element</h1>
 		<h2><a href="http://github.com/balupton/jquery-scrollto/zipball/gh-pages" title="Download" id="download">Download</a></h2>
-		<h2><a href="http://balupton.com/projects/jquery-scrollto" title="Home Page">Home Page</a></h2>
-		<h2><a href="http://github.com/balupton/jquery-scrollto" title="Project Page">Project Page</a></h2>
-		<h2><a href="http://getsatisfaction.com/balupton/products/balupton_jquery_scrollto" title="Support Page" class="gsfnwidget">Get Support</a></h2>
-		<h2><a href="http://github.com/balupton/jquery-scrollto/tree/master" title="Source Code">Source Code</a></h2>
+		<h2><a href="http://balupton.github.io/jquery-scrollto/" title="Demo Page">Demo Page</a></h2>
+		<h2><a href="https://github.com/balupton/jquery-scrollto" title="Project Page">Project Page</a></h2>
+		<h2><a href="https://getsatisfaction.com/balupton/products/balupton_jquery_scrollto" title="Support Page" class="gsfnwidget">Get Support</a></h2>
 	</div>
 
 	<div class="section about" id="about">
