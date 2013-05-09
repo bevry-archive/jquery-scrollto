@@ -8,24 +8,24 @@
     </title>
 
 	<!-- Include jQuery (ScrollTo Requirement) -->
-	<script type="text/javascript" src="../scripts/jquery.min.js"></script>
+	<script src="/vendor/jquery.js"></script>
 	<!-- Include jQuery ScrollTo -->
-	<script type="text/javascript" src="../scripts/jquery.scrollto.js"></script>
+	<script src="/scripts/jquery-scrollto.js"></script>
 
 	<!-- Include The Demo's Requirements -->
 	<link type="text/css" rel="stylesheet" media="screen" href="./styles/style.css" />
 </head>
 <body>
 	<!-- Include jQuery Syntax Highlighter -->
-	<script type="text/javascript" src="http://github.com/balupton/jquery-syntaxhighlighter/raw/master/scripts/jquery.syntaxhighlighter.min.js"></script>
+	<script src="http://github.com/balupton/jquery-syntaxhighlighter/raw/master/scripts/jquery.syntaxhighlighter.min.js"></script>
 	<!-- Initialise jQuery Syntax Highlighter -->
-	<script type="text/javascript">/*<![CDATA[*/
+	<script>/*<![CDATA[*/
 		$.SyntaxHighlighter.init();
 	/*]]>*/</script>
 
 	<!-- GetSatisfaction -->
-	<script type="text/javascript" src="http://s3.amazonaws.com/getsatisfaction.com/javascripts/feedback-v2.js"></script>
-	<script type="text/javascript">/*<![CDATA[*/
+	<script src="http://s3.amazonaws.com/getsatisfaction.com/javascripts/feedback-v2.js"></script>
+	<script>/*<![CDATA[*/
 	var GSFN_feedback_widget = new GSFN.feedback_widget({ display: 'overlay', company: 'balupton', placement: 'right', color: '#222', style: 'question' });
 	/*]]>*/</script>
 
@@ -109,7 +109,7 @@
 					</pre>
 				</div>
 			</div>
-			<script type="text/javascript">
+			<script>
 				$(function(){
 					// Prepare
 					var links = [
@@ -190,13 +190,13 @@
 		<p>If your page already has jQuery included then you can skip this step.</p>
 		<pre class="code language-html">
 			&lt;!-- Include jQuery (ScrollTo Requirement) --&gt;
-			&lt;script type="text/javascript" src="http://www.yoursite.com/somewhere/on/your/webserver/jquery-scrollto/scripts/jquery-1.4.2.min.js"&gt;&lt;/script&gt;
+			&lt;script src="http://www.yoursite.com/somewhere/on/your/webserver/jquery-scrollto/scripts/jquery-1.4.2.min.js"&gt;&lt;/script&gt;
 		</pre>
 
 		<h3>Step 4. Include jQuery ScrollTo (insert into your page's head tag)</h3>
 		<pre class="code language-html">
 			&lt;!-- Include ScrollTo (Production) --&gt;
-			&lt;script type="text/javascript" src="http://www.yoursite.com/somewhere/on/your/webserver/jquery-scrollto/scripts/jquery.scrollto.min.js"&gt;&lt;/script&gt;
+			&lt;script src="http://www.yoursite.com/somewhere/on/your/webserver/jquery-scrollto/scripts/jquery.scrollto.min.js"&gt;&lt;/script&gt;
 		</pre>
 	</div>
 
@@ -227,15 +227,12 @@
 	</div>
 
 	<!-- Google Analytics -->
-	<script type="text/javascript">
-		//<![CDATA[
+	<script>/*<![CDATA[*/
 		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-		//]]>
-	</script>
-	<script type="text/javascript" src="./scripts/modernizr-1.5.min.js"></script>
-	<script type="text/javascript">
-		//<![CDATA[
+	/*]]>*/</script>
+	<script src="/vendor/modernizr.js"></script>
+	<script>/*<![CDATA[*/
 		try {
 			var pageTracker = _gat._getTracker("UA-4446117-1");
 			pageTracker._initData();
@@ -246,8 +243,7 @@
 			pageTracker._setCustomVar(5, "html5.borderradius", Modernizr.borderradius ? "yes" : "no", 2 );
 			pageTracker._trackPageview();
 		} catch(err) {}
-		//]]>
-	</script>
+	/*]]>*/</script>
 
 </body>
 </html>

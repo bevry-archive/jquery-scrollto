@@ -1,5 +1,5 @@
 /* Imports*/
-@import url("./yui-reset-3.1.1-min.css");
+@import url("./../yui-cssreset.css");
 @import url("./generic.css");
 
 #scrollto-demo a {
