@@ -26,7 +26,11 @@
 	},
 	"devDependencies": {
 		"docpad": ">=6.21.5 <7",
-		"docpad-plugin-coffeescript": "2.x",
+		"docpad-plugin-eco": "2.x",
+		"docpad-plugin-highlightjs": "2.x",
+		"docpad-plugin-livereload": "2.x",
+		"docpad-plugin-ghpages": "2.x",
+		"docpad-plugin-cleanurls": "2.x"
 	},
 	"directories": {
 		"lib": "./out/lib"

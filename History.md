@@ -1,5 +1,8 @@
 ## History
 
+- v1.3.0 May 9, 2013
+	- Restructured for latest practices
+
 - v1.2.1 October 21, 2012
 	- Workaround for Safari 6
 		- Closes [#8](https://github.com/balupton/jquery-scrollto/issues/8) thanks to [Cameron Spear](https://github.com/CWSpear), [Dhruv Bhatia](https://github.com/dhruv-bhatia), [Fabricio Quagliariello](https://github.com/fmquaglia) for their help

@@ -16,19 +16,15 @@ h3 {
 	margin: 0.83em 0px 0.3em;
 }
 
-code.code, pre.code {
+pre > code {
 	border: 5px solid #DDD;
-	padding: 7px 0 5px;
+	padding: 7px;
 	font-size: 14px;
 	overflow: auto;
 	max-height: 500px;
 	width: 100%;
 	white-space: pre;
 	display: block;
-}
-body code.prettyprint, body pre.prettyprint {
-	border: 5px solid #DDD;
-	padding: 7px 0 5px;
 }
 
 strong {

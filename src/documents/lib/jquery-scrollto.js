@@ -3,14 +3,15 @@
  * @name jquery.scrollto
  * @package jquery-scrollto {@link http://balupton.com/projects/jquery-scrollto}
  */
-
-/**
- * jQuery Aliaser
- */
-(function(window,undefined){
+/*global define:false require:false */
+(function (name, context, definition) {
+	if (typeof module != 'undefined' && module.exports) module.exports = definition();
+	else if (typeof define == 'function' && define.amd) define(definition);
+	else context[name] = definition();
+})('jquery-scrollto', this, function(){
 	// Prepare
 	var jQuery, $, ScrollTo;
-	jQuery = $ = window.jQuery;
+	jQuery = $ = window.jQuery || require('jquery');
 
 	/**
 	 * jQuery ScrollTo (balupton edition)
@@ -22,7 +23,7 @@
 	 * @copyright (c) 2010 Benjamin Arthur Lupton {@link http://balupton.com}
 	 * @license MIT License {@link http://creativecommons.org/licenses/MIT/}
 	 */
-	ScrollTo = $.ScrollTo = $.ScrollTo || {
+	ScrollTo = {
 		/**
 		 * The Default Configuration
 		 */
@@ -219,7 +220,10 @@
 		}
 	};
 
-	// Apply our jQuery Prototype Function
-	$.fn.ScrollTo = $.ScrollTo.fn;
+	// Apply our extensions to jQuery
+	$.ScrollTo = $.ScrollTo || ScrollTo;
+	$.fn.ScrollTo = $.fn.ScrollTo || ScrollTo.fn;
 
-})(window);
+	// Export
+	return ScrollTo;
+});
