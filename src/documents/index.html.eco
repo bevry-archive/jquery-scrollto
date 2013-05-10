@@ -33,9 +33,6 @@ urls: ['/demo/']
 	<!-- Include jQuery (ScrollTo Requirement) -->
 	<script src="./vendor/jquery.js"></script>
 
-	<!-- Include jQuery Migrate Plugin (ScrollTo Requirement) -->
-	<script src="./vendor/jquery-migrate.js"></script>
-
 	<!-- Include jQuery ScrollTo -->
 	<script src="./lib/jquery-scrollto.js"></script>
 
@@ -165,14 +162,7 @@ urls: ['/demo/']
 			&lt;script src="http://www.yoursite.com/somewhere/on/your/webserver/jquery-scrollto/vendor/jquery.js"&gt;&lt;/script&gt;
 		</code></pre>
 
-		<h3>Step 4. Include jQuery Migrate (insert into your page's head tag)</h3>
-		<p>If your page already has jQuery Migrate included then you can skip this step.</p>
-		<pre><code class="language-html">
-			&lt;!-- Include jQuery Migrate (ScrollTo Requirement) --&gt;
-			&lt;script src="http://www.yoursite.com/somewhere/on/your/webserver/jquery-scrollto/vendor/jquery-migrate.js"&gt;&lt;/script&gt;
-		</code></pre>
-
-		<h3>Step 5. Include jQuery ScrollTo (insert into your page's head tag)</h3>
+		<h3>Step 4. Include jQuery ScrollTo (insert into your page's head tag)</h3>
 		<pre><code class="language-html">
 			&lt;!-- Include ScrollTo (Production) --&gt;
 			&lt;script src="http://www.yoursite.com/somewhere/on/your/webserver/jquery-scrollto/lib/jquery-scrollto.js"&gt;&lt;/script&gt;

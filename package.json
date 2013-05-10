@@ -1,6 +1,6 @@
 {
 	"name": "jquery-scrollto",
-	"version": "1.3.0",
+	"version": "1.4.0",
 	"description": "Smooth Scrolling to any jQuery/DOM Element",
 	"homepage": "https://github.com/balupton/jquery-scrollto",
 	"keywords": [

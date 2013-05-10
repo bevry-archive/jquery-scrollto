@@ -65,7 +65,6 @@
 			// Determine the Scroll
 			collection = collections.pop();
 			$container = collection.$container;
-			container = $container.get(0);
 			$target = collection.$target;
 
 			// Prepare the Inline Element of the Container
@@ -77,7 +76,7 @@
 			position = $container.css('position');
 
 			// Insert the Inline Element of the Container
-			$container.css('position','relative');
+			$container.css({position:'relative'});
 			$inline.appendTo($container);
 
 			// Determine the top offset
@@ -91,12 +90,12 @@
 			targetOffsetLeftAdjusted = targetOffsetLeft - startOffsetLeft - parseInt(config.offsetLeft,10);
 
 			// Determine current scroll positions
-			containerScrollTop = container.scrollTop;
-			containerScrollLeft = container.scrollLeft;
+			containerScrollTop = $container.prop('scrollTop');
+			containerScrollLeft = $container.prop('scrollLeft');
 
 			// Reset the Inline Element of the Container
 			$inline.remove();
-			$container.css('position',position);
+			$container.css({position:position});
 
 			// Prepare the scroll options
 			scrollOptions = {};
@@ -141,12 +140,17 @@
 				scrollOptions.scrollLeft = targetOffsetLeftAdjusted;
 			}
 
-			// Perform the scroll
-			if ( $.browser.safari && container === document.body ) {
-				window.scrollTo(scrollOptions.scrollLeft, scrollOptions.scrollTop);
-				callback();
+			// Check to see if the scroll is necessary
+			// We must do this, otherwise safari will fail completely
+			if ( $container.prop('scrollHeight') === $container.width() ) {
+				delete scrollOptions.scrollTop;
 			}
-			else if ( scrollOptions.scrollTop || scrollOptions.scrollLeft ) {
+			if ( $container.prop('scrollWidth') === $container.width() ) {
+				delete scrollOptions.scrollLeft;
+			}
+
+			// Perform the scroll
+			if ( scrollOptions.scrollTop || scrollOptions.scrollLeft ) {
 				$container.animate(scrollOptions, config.duration, config.easing, callback);
 			}
 			else {
@@ -201,9 +205,7 @@
 
 			// Add the final collection
 			collections.push({
-				'$container': $(
-					($.browser.msie || $.browser.mozilla) ? 'html' : 'body'
-				),
+				'$container': $('html,body'), // must do both as different browsers handle this diferently
 				'$target': $target
 			});
 
