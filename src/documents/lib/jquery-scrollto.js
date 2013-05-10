@@ -141,7 +141,6 @@
 			}
 
 			// Check to see if the scroll is necessary
-			// We must do this, otherwise safari will fail completely
 			if ( $container.prop('scrollHeight') === $container.width() ) {
 				delete scrollOptions.scrollTop;
 			}
@@ -150,8 +149,31 @@
 			}
 
 			// Perform the scroll
-			if ( scrollOptions.scrollTop || scrollOptions.scrollLeft ) {
-				$container.animate(scrollOptions, config.duration, config.easing, callback);
+			if ( scrollOptions.scrollTop != null || scrollOptions.scrollLeft != null ) {
+				// Prepare
+				var animationOptions = {
+					duration: config.duration,
+					easing: config.easing
+				};
+
+				// If we are HTML then perform the scrolling seperately
+				// Otherwise perform them at the same time
+				if ( $container.prop('tagName') === 'HTML' ) {
+					var callbackDelay = 0;
+					if ( scrollOptions.scrollTop != null ) {
+						callbackDelay += animationOptions.duration;
+						$container.animate({scrollTop:scrollOptions.scrollTop}, animationOptions);
+					}
+					if ( scrollOptions.scrollLeft != null ) {
+						callbackDelay += animationOptions.duration;
+						$container.animate({scrollLeft:scrollOptions.scrollLeft}, animationOptions);
+					}
+					setTimeout(callback, callbackDelay);
+				}
+				else {
+					animationOptions.complete = callback;
+					$container.animate(scrollOptions, animationOptions);
+				}
 			}
 			else {
 				callback();

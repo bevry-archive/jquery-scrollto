@@ -1,9 +1,11 @@
 ## History
 
+- v1.4.1 May 10, 2013
+	- Better cross-browser support
+	- Fix iOS support
+
 - v1.4.0 May 10, 2013
 	- Better cross-browser support
-		- Safari now works in all cases
-		- Opera support
 	- Removed need for `$.browser` and thus removed need for the jQuery Migrate plugin
 
 - v1.3.0 May 9, 2013
