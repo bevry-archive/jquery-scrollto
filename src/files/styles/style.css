@@ -13,14 +13,14 @@
 	text-decoration:underline;
 }
 
-#scrollto-group {
+#scrollto-pieces {
 	width: 500px;
 	height:200px;
 	overflow:scroll;
 	border:5px ridge white;
 }
 
-#scrollto-group div {
+#scrollto-pieces div {
 	width: 90%;
 	height: 300px;
 	padding: 15px 4%;
