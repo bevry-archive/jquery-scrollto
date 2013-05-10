@@ -1,5 +1,8 @@
 ## History
 
+- v1.4.2 May 10, 2013
+	- Fixed a bug in the jQuery animation code that prevented scrolling from working smoothly on iOS devices
+
 - v1.4.1 May 10, 2013
 	- Better cross-browser support
 	- Fix iOS support
