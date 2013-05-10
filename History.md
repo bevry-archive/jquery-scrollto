@@ -1,5 +1,9 @@
 ## History
 
+- v1.4.3 May 10, 2013
+	- Internet Explorer support
+	- Fix wobble on iOS
+
 - v1.4.2 May 10, 2013
 	- Fixed a bug in the jQuery animation code that prevented scrolling from working smoothly on iOS devices
 

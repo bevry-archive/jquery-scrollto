@@ -9,36 +9,43 @@
 	jQuery = $ = window.jQuery || require('jquery');
 
 	// Fix scrolling animations on html/body on safari
-	$.Tween.propHooks.scrollTop = $.Tween.propHooks.scrollLeft = {
-		get: function(tween) {
-			if ( tween.elem.tagName === 'HTML' || tween.elem.tagName === 'BODY' ) {
-				if ( tween.prop === 'scrollLeft' ) {
-					return window.scrollX;
-				} else if ( tween.prop === 'scrollTop' ) {
-					return window.scrollY;
+	$.propHooks.scrollTop = $.propHooks.scrollLeft = {
+		get: function(elem,prop) {
+			var result = null;
+			if ( elem.tagName === 'HTML' || elem.tagName === 'BODY' ) {
+				if ( prop === 'scrollLeft' ) {
+					result = window.scrollX;
+				} else if ( prop === 'scrollTop' ) {
+					result = window.scrollY;
 				}
 			}
+			if ( result == null ) {
+				result = elem[prop];
+			}
+			return result;
+		}
+	};
+	$.Tween.propHooks.scrollTop = $.Tween.propHooks.scrollLeft = {
+		get: function(tween) {
+			return $.propHooks.scrollTop.get(tween.elem, tween.prop);
 		},
 		set: function(tween) {
 			// Our safari fix
 			if ( tween.elem.tagName === 'HTML' || tween.elem.tagName === 'BODY' ) {
-				// Prepare
-				var scrollLeft, scrollTop;
-
 				// Defaults
-				scrollLeft = window.scrollX;
-				scrollTop = window.scrollY;
+				tween.options.bodyScrollLeft = (tween.options.bodyScrollLeft || window.scrollX);
+				tween.options.bodyScrollTop = (tween.options.bodyScrollTop || window.scrollY);
 
 				// Apply
 				if ( tween.prop === 'scrollLeft' ) {
-					scrollLeft = tween.now;
+					tween.options.bodyScrollLeft = Math.round(tween.now);
 				}
 				else if ( tween.prop === 'scrollTop' ) {
-					scrollTop = tween.now;
+					tween.options.bodyScrollTop = Math.round(tween.now);
 				}
 
 				// Apply
-				window.scrollTo(scrollLeft, scrollTop);
+				window.scrollTo(tween.options.bodyScrollLeft, tween.options.bodyScrollTop);
 			}
 			// jQuery's IE8 Fix
 			else if ( tween.elem.nodeType && tween.elem.parentNode ) {
@@ -207,10 +214,10 @@
 			// Cycle through the containers
 			while ( ($container.length === 1) && (container !== document.body) && (container !== document) ) {
 				// Check Container for scroll differences
-				var scrollTop, scrollLeft;
-				scrollTop = $container.css('overflow-y') !== 'visible' && container.scrollHeight !== container.clientHeight;
-				scrollLeft =  $container.css('overflow-x') !== 'visible' && container.scrollWidth !== container.clientWidth;
-				if ( scrollTop || scrollLeft ) {
+				var containerScrollTop, containerScrollLeft;
+				containerScrollTop = $container.css('overflow-y') !== 'visible' && container.scrollHeight !== container.clientHeight;
+				containerScrollLeft =  $container.css('overflow-x') !== 'visible' && container.scrollWidth !== container.clientWidth;
+				if ( containerScrollTop || containerScrollLeft ) {
 					// Push the Collection
 					collections.push({
 						'$container': $container,
@@ -226,8 +233,9 @@
 
 			// Add the final collection
 			collections.push({
-				// Apple browsers only support scrolling the body
-				'$container': $('html,body'),
+				'$container': $('html'),
+				// document.body doesn't work in firefox, html works for all
+				// internet explorer starts at the beggining
 				'$target': $target
 			});
 
