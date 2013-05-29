@@ -23,6 +23,7 @@
 	"dependencies": {},
 	"devDependencies": {
 		"docpad": "6.x",
+		"docpad-plugin-umd": "2.x",
 		"docpad-plugin-eco": "2.x",
 		"docpad-plugin-highlightjs": "2.x",
 		"docpad-plugin-livereload": "2.x",

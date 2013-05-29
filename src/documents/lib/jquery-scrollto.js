@@ -1,9 +1,8 @@
-/*global define:false require:false */
-(function (name, context, definition) {
-	if (typeof module != 'undefined' && module.exports) module.exports = definition();
-	else if (typeof define == 'function' && define.amd) define(definition);
-	else context[name] = definition();
-})('jquery-scrollto', this, function(){
+---
+umd: true
+---
+
+(function(){
 	// Prepare
 	var jQuery, $, ScrollTo;
 	jQuery = $ = window.jQuery || require('jquery');
@@ -258,4 +257,4 @@
 
 	// Export
 	return ScrollTo;
-});
+}).call(this);
