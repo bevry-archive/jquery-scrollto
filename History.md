@@ -1,5 +1,8 @@
 ## History
 
+- v1.4.4 May 29, 2013
+	- Removed incorrect requirement of backbone peer dependency
+
 - v1.4.3 May 10, 2013
 	- Internet Explorer support
 	- Fix wobble on iOS

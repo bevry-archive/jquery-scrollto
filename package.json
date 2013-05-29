@@ -1,6 +1,6 @@
 {
 	"name": "jquery-scrollto",
-	"version": "1.4.3",
+	"version": "1.4.4",
 	"description": "Smooth Scrolling to any jQuery/DOM Element",
 	"homepage": "https://github.com/balupton/jquery-scrollto",
 	"keywords": [
@@ -18,14 +18,11 @@
 	},
 	"repository" : {
 		"type": "git",
-		"url": "http://github.com/balupton/jquery-scrollto.git"
+		"url": "https://github.com/balupton/jquery-scrollto.git"
 	},
 	"dependencies": {},
-	"peerDependencies": {
-		"backbone": "*"
-	},
 	"devDependencies": {
-		"docpad": ">=6.21.5 <7",
+		"docpad": "6.x",
 		"docpad-plugin-eco": "2.x",
 		"docpad-plugin-highlightjs": "2.x",
 		"docpad-plugin-livereload": "2.x",
