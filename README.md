@@ -1,6 +1,6 @@
 # jQuery ScrollTo
 
-[![NPM version](https://badge.fury.io/js/jquery-scrollto.png)](https://npmjs.org/package/query-engine)
+[![NPM version](https://badge.fury.io/js/jquery-scrollto.png)](https://npmjs.org/package/jquery-scrollto)
 [![Flattr this project](https://raw.github.com/balupton/flattr-buttons/master/badge-89x18.gif)](http://flattr.com/thing/344188/balupton-on-Flattr)
 
 Smooth Scrolling to any jQuery/DOM Element
