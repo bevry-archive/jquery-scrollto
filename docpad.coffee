@@ -7,9 +7,8 @@ module.exports =
 				twitterTweetButton: "balupton"
 				twitterFollowButton: "balupton"
 				githubFollowButton: "balupton"
-				gauges: '5077ae93f5a1f5067b000028'
+				gauges: '51a70cd2f5a1f52bb100000a'
 				googleAnalytics: 'UA-4446117-1'
-				reinvigorate: '52uel-236r9p108l'
 	plugins:
 		highlightjs:
 			removeIndentation: true
