@@ -1,0 +1,78 @@
+---
+layout: default
+urls: ['/demo/']
+---
+
+<div class="section using" id="using">
+	<h2>Using</h2>
+
+	<div class="demo">
+		<div class="demo-links">Loading... please wait</div>
+		<div class="demo-pieces">
+			<div id="scrollto1" title="Scroll to #scrollto1">
+				#scrollto1:
+				<pre><code class="language-javascript">
+					$('#scrollto1').ScrollTo();
+				</code></pre>
+			</div>
+			<div id="scrollto2" title="Scroll to #scrollto2 with a 2 second duration and `linear` easing">
+				#scrollto2
+				<pre><code class="language-javascript">
+					$('#scrollto2').ScrollTo({
+						duration: 2000,
+						easing: 'linear'
+					});
+				</code></pre>
+			</div>
+			<div id="scrollto3" title="Scroll to #scrollto3 with a 2 second duration and durationMode set to `all`">
+				#scrollto3
+				<pre><code class="language-javascript">
+					$('#scrollto3').ScrollTo({
+						duration: 2000,
+						durationMode: 'all'
+					});
+				</code></pre>
+			</div>
+			<div id="scrollto4" title="Scroll to #scrollto4 with a 2 second duration and a callback on scroll completion">
+				#scrollto4
+				<pre><code class="language-javascript">
+					$('#scrollto4').ScrollTo({
+						duration: 2000,
+						callback: function(){
+							alert('Scrolling has now completed.');
+						}
+					});
+				</code></pre>
+			</div>
+			<div id="scrollto5" style="margin-left:600px;" title="Scroll to #scrollto5 with a horizontal scroll">
+				#scrollto5
+				<pre><code class="language-javascript">
+					$('#scrollto5').ScrollTo();
+				</code></pre>
+			</div>
+			<div id="scrollto6" style="margin-left:600px;" title="Scroll to #scrollto6 only if it is outside the visible area">
+				#scrollto6
+				<pre><code class="language-javascript">
+					$('#scrollto6').ScrollTo({
+						onlyIfOutside: true
+					});
+				</code></pre>
+			</div>
+		</div>
+		<script>
+			/* Generate the links automatically from the pieces */
+			$(function(){
+				var $links = $('.demo-links').empty();
+				var $pieces = $('.demo-pieces').children();
+				$pieces.each(function(){
+					var $piece = $(this);
+					var $link = $('<a>',{
+						text: $piece.attr('title')
+					}).on('click',function(){
+						eval($piece.find('code').text());
+					}).appendTo($links)
+				});
+			});
+		</script>
+	</div>
+</div>

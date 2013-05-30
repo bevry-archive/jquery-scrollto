@@ -1,8 +1,11 @@
 {
 	"name": "jquery-scrollto",
 	"version": "1.4.4",
-	"description": "Smooth Scrolling to any jQuery/DOM Element",
-	"homepage": "https://github.com/balupton/jquery-scrollto",
+	"description": "Smooth scroll to any jQuery/DOM element",
+	"title": "jQuery ScrollTo",
+	"homepage": "http://balupton.github.com/jquery-scrollto",
+	"project":  "https://github.com/balupton/jquery-scrollto",
+	"download": "https://github.com/balupton/jquery-scrollto/zipball/gh-pages",
 	"keywords": [
 		"jquery","scroll","scrolling","scrollto","smooth","dom"
 	],
@@ -16,6 +19,10 @@
 	"bugs": {
 		"url": "https://github.com/balupton/jquery-scrollto/issues"
 	},
+	"license" : {
+		"name": "MIT",
+		"url": "http://creativecommons.org/licenses/MIT/"
+	},
 	"repository" : {
 		"type": "git",
 		"url": "https://github.com/balupton/jquery-scrollto.git"
@@ -24,9 +31,12 @@
 	"devDependencies": {
 		"docpad": "6.x",
 		"docpad-plugin-umd": "2.x",
+		"docpad-plugin-coffeescript": "2.x",
 		"docpad-plugin-eco": "2.x",
+		"docpad-plugin-stylus": "2.x",
 		"docpad-plugin-highlightjs": "2.x",
 		"docpad-plugin-livereload": "2.x",
+		"docpad-plugin-services": "2.x",
 		"docpad-plugin-ghpages": "2.x",
 		"docpad-plugin-cleanurls": "2.x"
 	},
