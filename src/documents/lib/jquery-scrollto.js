@@ -63,7 +63,7 @@ umd: true
 			durationMode: 'each',
 			offsetTop: 0,
 			offsetLeft: 0,
-            mode: ''
+			mode: ''
 		},
 
 		// Set Configuration
