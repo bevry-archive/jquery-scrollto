@@ -62,7 +62,8 @@ umd: true
 			callback: undefined,
 			durationMode: 'each',
 			offsetTop: 0,
-			offsetLeft: 0
+			offsetLeft: 0,
+            mode: ''
 		},
 
 		// Set Configuration
@@ -171,6 +172,12 @@ umd: true
 				delete scrollOptions.scrollTop;
 			}
 			if ( $container.prop('scrollWidth') === $container.width() ) {
+				delete scrollOptions.scrollLeft;
+			}
+
+			if ( scrollOptions.mode !== 'horizontal' ) {
+				delete scrollOptions.scrollLeft;
+			} else if ( scrollOptions.direction !== 'vertical' ) {
 				delete scrollOptions.scrollLeft;
 			}
 
