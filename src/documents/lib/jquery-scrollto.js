@@ -168,16 +168,10 @@ umd: true
 			}
 
 			// Check to see if the scroll is necessary
-			if ( $container.prop('scrollHeight') === $container.width() ) {
+			if ( $container.prop('scrollHeight') === $container.width() || config.mode === 'horizontal' ) {
 				delete scrollOptions.scrollTop;
 			}
-			if ( $container.prop('scrollWidth') === $container.width() ) {
-				delete scrollOptions.scrollLeft;
-			}
-
-			if ( scrollOptions.mode !== 'horizontal' ) {
-				delete scrollOptions.scrollLeft;
-			} else if ( scrollOptions.mode !== 'vertical' ) {
+			if ( $container.prop('scrollWidth') === $container.width() || config.mode === 'vertical' ) {
 				delete scrollOptions.scrollLeft;
 			}
 
