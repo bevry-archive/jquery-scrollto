@@ -177,7 +177,7 @@ umd: true
 
 			if ( scrollOptions.mode !== 'horizontal' ) {
 				delete scrollOptions.scrollLeft;
-			} else if ( scrollOptions.direction !== 'vertical' ) {
+			} else if ( scrollOptions.mode !== 'vertical' ) {
 				delete scrollOptions.scrollLeft;
 			}
 
