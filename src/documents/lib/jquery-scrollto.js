@@ -1,7 +1,3 @@
----
-umd: true
----
-
 (function(){
 	// Prepare
 	var jQuery, $, ScrollTo;
