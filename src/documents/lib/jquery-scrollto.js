@@ -62,7 +62,8 @@ umd: true
 			callback: undefined,
 			durationMode: 'each',
 			offsetTop: 0,
-			offsetLeft: 0
+			offsetLeft: 0,
+			mode: ''
 		},
 
 		// Set Configuration
@@ -167,10 +168,10 @@ umd: true
 			}
 
 			// Check to see if the scroll is necessary
-			if ( $container.prop('scrollHeight') === $container.width() ) {
+			if ( $container.prop('scrollHeight') === $container.width() || config.mode === 'horizontal' ) {
 				delete scrollOptions.scrollTop;
 			}
-			if ( $container.prop('scrollWidth') === $container.width() ) {
+			if ( $container.prop('scrollWidth') === $container.width() || config.mode === 'vertical' ) {
 				delete scrollOptions.scrollLeft;
 			}
 
