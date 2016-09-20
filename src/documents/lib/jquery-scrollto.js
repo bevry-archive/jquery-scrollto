@@ -167,7 +167,7 @@ umd: true
 			}
 
 			// Check to see if the scroll is necessary
-			if ( $container.prop('scrollHeight') === $container.width() ) {
+			if ( $container.prop('scrollHeight') === $container.height() ) {
 				delete scrollOptions.scrollTop;
 			}
 			if ( $container.prop('scrollWidth') === $container.width() ) {
