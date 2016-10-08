@@ -89,7 +89,8 @@ Smooth scroll to any jQuery/DOM element
 
 These amazing people are maintaining this project:
 
-<ul><li><a href="http://balupton.com">Benjamin Lupton</a> — <a href="https://github.com/balupton/jquery-scrollto/commits?author=balupton" title="View the GitHub contributions of Benjamin Lupton on repository balupton/jquery-scrollto">view contributions</a></li></ul>
+<ul><li><a href="http://balupton.com">Benjamin Lupton</a> — <a href="https://github.com/balupton/jquery-scrollto/commits?author=balupton" title="View the GitHub contributions of Benjamin Lupton on repository balupton/jquery-scrollto">view contributions</a></li>
+<li><a href="http://inumedia.net">Andy</a> — <a href="https://github.com/balupton/jquery-scrollto/commits?author=Inumedia" title="View the GitHub contributions of Andy on repository balupton/jquery-scrollto">view contributions</a></li></ul>
 
 <h3>Sponsors</h3>
 
