@@ -1,7 +1,7 @@
 {
   "title": "jQuery ScrollTo",
   "name": "jquery-scrollto",
-  "version": "1.4.5",
+  "version": "1.4.6",
   "description": "Smooth scroll to any jQuery/DOM element",
   "homepage": "https://balupton.github.io/jquery-scrollto/",
   "project": "https://github.com/balupton/jquery-scrollto",
@@ -38,7 +38,8 @@
     "scrolling",
     "scrollto",
     "smooth",
-    "dom"
+    "dom",
+    "jquery-plugin"
   ],
   "author": "2010+ Benjamin Lupton <b@lupton.cc> (http://balupton.com)",
   "maintainers": [
