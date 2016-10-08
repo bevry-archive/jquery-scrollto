@@ -7,7 +7,6 @@
 
 <!-- BADGES/ -->
 
-<span class="badge-travisci"><a href="http://travis-ci.org/balupton/jquery-scrollto" title="Check this project's build status on TravisCI"><img src="https://img.shields.io/travis/balupton/jquery-scrollto/master.svg" alt="Travis CI Build Status" /></a></span>
 <span class="badge-npmversion"><a href="https://npmjs.org/package/jquery-scrollto" title="View this project on NPM"><img src="https://img.shields.io/npm/v/jquery-scrollto.svg" alt="NPM version" /></a></span>
 <span class="badge-npmdownloads"><a href="https://npmjs.org/package/jquery-scrollto" title="View this project on NPM"><img src="https://img.shields.io/npm/dm/jquery-scrollto.svg" alt="NPM downloads" /></a></span>
 <span class="badge-daviddm"><a href="https://david-dm.org/balupton/jquery-scrollto" title="View the status of this project's dependencies on DavidDM"><img src="https://img.shields.io/david/balupton/jquery-scrollto.svg" alt="Dependency Status" /></a></span>

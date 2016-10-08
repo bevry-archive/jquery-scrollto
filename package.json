@@ -9,7 +9,6 @@
   "license": "MIT",
   "badges": {
     "list": [
-      "travisci",
       "npmversion",
       "npmdownloads",
       "daviddm",
