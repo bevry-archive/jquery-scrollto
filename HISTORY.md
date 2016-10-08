@@ -1,5 +1,10 @@
 # History
 
+## v1.4.5 2016 October 8
+- Fixed an issue where if the container's scrollable height is equal to the container width, no vertical scrolling occurs
+  - Thanks to [Andy](https://github.com/Inumedia) for [pull request #32](https://github.com/balupton/jquery-scrollto/pull/32)
+- Updated internal conventions
+
 ## v1.4.4 2013 May 29
 - Removed incorrect requirement of backbone peer dependency
 
