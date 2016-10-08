@@ -1,50 +1,89 @@
 {
-	"name": "jquery-scrollto",
-	"version": "1.4.4",
-	"description": "Smooth scroll to any jQuery/DOM element",
-	"title": "jQuery ScrollTo",
-	"homepage": "http://balupton.github.com/jquery-scrollto",
-	"project":  "https://github.com/balupton/jquery-scrollto",
-	"download": "https://github.com/balupton/jquery-scrollto/zipball/gh-pages",
-	"keywords": [
-		"jquery","scroll","scrolling","scrollto","smooth","dom"
-	],
-	"author": "Bevry Pty Ltd <us@bevry.me> (http://bevry.me)",
-	"maintainers": [
-		"Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)"
-	],
-	"contributors": [
-		"Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)"
-	],
-	"bugs": {
-		"url": "https://github.com/balupton/jquery-scrollto/issues"
-	},
-	"license" : {
-		"name": "MIT",
-		"url": "http://creativecommons.org/licenses/MIT/"
-	},
-	"repository" : {
-		"type": "git",
-		"url": "https://github.com/balupton/jquery-scrollto.git"
-	},
-	"dependencies": {},
-	"devDependencies": {
-		"docpad": "6.x",
-		"docpad-plugin-umd": "2.x",
-		"docpad-plugin-coffeescript": "2.x",
-		"docpad-plugin-eco": "2.x",
-		"docpad-plugin-stylus": "2.x",
-		"docpad-plugin-highlightjs": "2.x",
-		"docpad-plugin-livereload": "2.x",
-		"docpad-plugin-services": "2.x",
-		"docpad-plugin-ghpages": "2.x",
-		"docpad-plugin-cleanurls": "2.x"
-	},
-	"directories": {
-		"lib": "./out/lib"
-	},
-	"scripts": {
-		"test": "./node_modules/.bin/cake test"
-	},
-	"main": "./out/lib/jquery-scrollto.js"
+  "title": "jQuery ScrollTo",
+  "name": "jquery-scrollto",
+  "version": "1.4.4",
+  "description": "Smooth scroll to any jQuery/DOM element",
+  "homepage": "https://balupton.github.io/jquery-scrollto/",
+  "project": "https://github.com/balupton/jquery-scrollto",
+  "download": "https://github.com/balupton/jquery-scrollto/zipball/gh-pages",
+  "license": "MIT",
+  "badges": {
+    "list": [
+      "travisci",
+      "npmversion",
+      "npmdownloads",
+      "daviddm",
+      "daviddmdev",
+      "---",
+      "slackin",
+      "patreon",
+      "gratipay",
+      "flattr",
+      "paypal",
+      "bitcoin",
+      "wishlist"
+    ],
+    "config": {
+      "patreonUsername": "bevry",
+      "gratipayUsername": "bevry",
+      "flattrUsername": "balupton",
+      "paypalURL": "https://bevry.me/paypal",
+      "bitcoinURL": "https://bevry.me/bitcoin",
+      "wishlistURL": "https://bevry.me/wishlist",
+      "slackinURL": "https://slack.bevry.me"
+    }
+  },
+  "keywords": [
+    "jquery",
+    "scroll",
+    "scrolling",
+    "scrollto",
+    "smooth",
+    "dom"
+  ],
+  "author": "2010+ Benjamin Lupton <b@lupton.cc> (http://balupton.com)",
+  "maintainers": [
+    "Benjamin Lupton <b@lupton.cc> (http://balupton.com)"
+  ],
+  "contributors": [
+    "Benjamin Lupton <b@lupton.cc> (http://balupton.com)",
+    "Andy <inumedia@inumedia.net> (http://inumedia.net)",
+    "Peter Dave Hello (http://www.peterdavehello.org/)"
+  ],
+  "bugs": {
+    "url": "https://github.com/balupton/jquery-scrollto/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/balupton/jquery-scrollto.git"
+  },
+  "main": "out/lib/jquery-scrollto.js",
+  "scripts": {
+    "clean": "rm -Rf ./out",
+    "compile": "npm run compile:docpad",
+    "compile:docpad": "docpad generate --env static",
+    "meta": "npm run meta:projectz",
+    "meta:projectz": "projectz compile",
+    "prepare": "npm run compile && npm run test && npm run meta",
+    "release": "npm run prepare && npm run release:publish && npm run release:tag && npm run release:push",
+    "release:publish": "npm publish",
+    "release:tag": "git tag v$npm_package_version -a",
+    "release:push": "git push origin master && git push origin --tags",
+    "pretest": "npm run test:eslint",
+    "test:eslint": "eslint ./source",
+    "test": "echo 'no tests'"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "docpad": "6.x",
+    "docpad-plugin-cleanurls": "2.x",
+    "docpad-plugin-eco": "2.x",
+    "docpad-plugin-ghpages": "2.x",
+    "docpad-plugin-highlightjs": "2.x",
+    "docpad-plugin-livereload": "2.x",
+    "docpad-plugin-services": "2.x",
+    "docpad-plugin-umd": "2.x",
+    "eslint": "^2.13.1",
+    "projectz": "^1.2.0"
+  }
 }

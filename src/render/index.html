@@ -61,15 +61,15 @@ urls: ['/demo/']
 		</div>
 		<script>
 			/* Generate the links automatically from the pieces */
-			$(function(){
-				var $links = $('.demo-links').empty();
-				var $pieces = $('.demo-pieces').children();
-				$pieces.each(function(){
-					var $piece = $(this);
-					var $link = $('<a>',{
+			$(function () {
+				var $links = $('.demo-links').empty()
+				var $pieces = $('.demo-pieces').children()
+				$pieces.each(function () {
+					var $piece = $(this)
+					var $link = $('<a>', {
 						text: $piece.attr('title')
-					}).on('click',function(){
-						eval($piece.find('code').text());
+					}).on('click', function () {
+						eval($piece.find('code').text())
 					}).appendTo($links)
 				});
 			});

@@ -20,7 +20,7 @@
 	<!-- ============================== -->
 	<!-- Demo Requirements -->
 
-	<link rel="stylesheet" media="screen" href="./vendor/highlight.css" />
+	<link rel="stylesheet" media="screen" href="./vendor/github.css" />
 	<link rel="stylesheet" media="screen" href="./styles/style.css" />
 </head>
 <body>
