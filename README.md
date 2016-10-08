@@ -59,10 +59,6 @@ Smooth scroll to any jQuery/DOM element
 [Refer to the demo for usage and demo](http://balupton.github.io/jquery-scrollto/)
 
 
-## Download
-[Download the `gh-pages` branch containing the compiled project.](https://github.com/balupton/jquery-scrollto/zipball/gh-pages)
-
-
 <!-- HISTORY/ -->
 
 <h2>History</h2>
