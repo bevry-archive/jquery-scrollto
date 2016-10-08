@@ -57,6 +57,7 @@
     "url": "https://github.com/balupton/jquery-scrollto.git"
   },
   "main": "out/lib/jquery-scrollto.js",
+  "browser": "out/lib/jquery-scrollto.js",
   "scripts": {
     "clean": "rm -Rf ./out",
     "compile": "npm run compile:docpad",
