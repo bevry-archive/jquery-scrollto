@@ -54,8 +54,8 @@ Smooth scroll to any jQuery/DOM element
 - ZIP: https://github.com/balupton/jquery-scrollto/zipball/gh-pages
 
 
-## Install & Usage
-[Refer to the demo for usage and installation instructions](http://balupton.github.io/jquery-scrollto/)
+## Usage & Demo
+[Refer to the demo for usage and demo](http://balupton.github.io/jquery-scrollto/)
 
 
 ## Download
