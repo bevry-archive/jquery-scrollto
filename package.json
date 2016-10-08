@@ -67,10 +67,11 @@
     "meta": "npm run meta:projectz",
     "meta:projectz": "projectz compile",
     "prepare": "npm run compile && npm run test && npm run meta",
-    "release": "npm run prepare && npm run release:publish && npm run release:tag && npm run release:push",
+    "release": "npm run prepare && npm run release:publish && npm run release:tag && npm run release:push && npm run release:deploy",
     "release:publish": "npm publish",
     "release:tag": "git tag v$npm_package_version -a",
     "release:push": "git push origin master && git push origin --tags",
+    "release:deploy": "docpad deploy-ghpages --env static",
     "pretest": "npm run test:eslint",
     "test:eslint": "eslint ./source",
     "test": "echo 'no tests'"
