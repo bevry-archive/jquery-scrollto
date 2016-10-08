@@ -1,4 +1,6 @@
-# Benjamin Lupton's Project Checklist v0.1.2, 2016 October 8
+# Benjamin Lupton's Project Checklist
+
+v0.1.2, 2016 October 8
 
 All Projects:
 
