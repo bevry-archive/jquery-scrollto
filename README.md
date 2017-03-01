@@ -51,7 +51,7 @@ Smooth scroll to any jQuery/DOM element
 
 
 ### Direct
-- CDN URL: `//rawgit.com/balupton/jquery-scrollto/v1.4.6/lib/jquery-scrollto.js`
+- CDN URL: `//rawgit.com/balupton/jquery-scrollto/gh-pages/lib/jquery-scrollto.js`
 - ZIP: https://github.com/balupton/jquery-scrollto/zipball/gh-pages
 
 
