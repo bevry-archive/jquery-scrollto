@@ -1,0 +1,12 @@
+{
+  "name": "jquery-scrollto",
+  "author": "balupton",
+  "version": "1.4.4",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/balupton/jquery-scrollto.git"
+  },
+  "dependencies": {
+    "jquery": ">=1.4"
+  }
+}
