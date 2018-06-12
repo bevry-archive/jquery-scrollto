@@ -81,6 +81,7 @@ umd: true
 		scroll: function (collections, config) {
 			// Prepare
 			var collection, $container, $target, $inline, position,
+				containerHeight, containerWidth,
 				containerScrollTop, containerScrollLeft,
 				containerScrollTopEnd, containerScrollLeftEnd,
 				startOffsetTop, targetOffsetTop, targetOffsetTopAdjusted,
@@ -167,10 +168,12 @@ umd: true
 			}
 
 			// Check to see if the scroll is necessary
-			if ( $container.prop('scrollHeight') === $container.height() ) {
+			containerHeight = $container.prop('tagName') === 'HTML' ? $container.prop('clientHeight') : $container.height()
+			if ( $container.prop('scrollHeight') === containerHeight ) {
 				delete scrollOptions.scrollTop
 			}
-			if ( $container.prop('scrollWidth') === $container.width() ) {
+			containerWidth = $container.prop('tagName') === 'HTML' ? $container.prop('clientWidth') : $container.width()
+			if ( $container.prop('scrollWidth') === containerWidth ) {
 				delete scrollOptions.scrollLeft
 			}
 
